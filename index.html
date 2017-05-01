@@ -9,10 +9,12 @@
 		<link rel="stylesheet" href="https://cdn.bootcss.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
 		<script src="https://cdn.bootcss.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.2/knockout-min.js"></script>
 		<style>
-			body{
+			body {
 				font-size: 13px "Microsoft Yahei";
 			}
+			
 			.section {
 				text-align: center;
 				color: #fff;
@@ -74,10 +76,9 @@
 						}
 					}
 				});
-
-				//				setInterval(function() {
-				//					$.fn.fullpage.moveSectionDown();
-				//				}, 10000);
+				setInterval(function() {
+					$.fn.fullpage.moveSectionDown();
+				}, 10000);
 
 			});
 		</script>
@@ -95,12 +96,12 @@
 			.section1 .info span {
 				margin: 0px 4px;
 			}
-			.section1 .mottoes{
+			
+			.section1 .mottoes {
 				margin: 10px 0px;
 			}
-			.section .contact{
-				
-			}
+			
+			.section .contact {}
 		</style>
 		<div id="page">
 			<div class="section section1">
@@ -110,12 +111,10 @@
 					<span class="glyphicon glyphicon-user" title="生于1990年6月"> 1990.06</span>
 					<span class="glyphicon glyphicon-flag" title="现坐标四川成都"> 四川•成都</span>
 					<span class="glyphicon glyphicon-folder-open" title="自2011年起至今"> 6年</span>
-					
 				</div>
 				<p class="mottoes">
-					- - -人生苦短  及时行乐  把握今天  创造明天
+					- - -人生苦短 及时行乐 把握今天 创造明天
 				</p>
-				
 			</div>
 			<div class="section section2">
 				<p>我的技能/My Skills</p>
@@ -149,7 +148,11 @@
 				<p>好记性不如烂笔头</p>
 			</div>
 		</div>
-
+		<script type="text/javascript">
+			var viewModel = {
+				Language: ko.observable(true)
+			};
+		</script>
 	</body>
 
 </html>
