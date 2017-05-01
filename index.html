@@ -34,7 +34,7 @@
 		<script src="resources/jquery.easing.min.js"></script>
 		<script>
 			$(function() {
-				$('#dowebok').fullpage({
+				$('#page').fullpage({
 					'navigation': true,
 					'navigationPosition': 'right',
 					'navigationTooltips': ['我是谁/Who Am I', '技能/Skills', '案例/Cases', '博客/Blogs'],
@@ -75,17 +75,80 @@
 	</head>
 
 	<body>
-		<div id="dowebok">
+		<style type="text/css">
+			/* entire container, keeps perspective */
+			
+			.flip-container {
+				perspective: 1000;
+				height: 200px;
+			}
+			/* flip the pane when hovered */
+			
+			.flip-container:hover .flipper,
+			.flip-container.hover .flipper {
+				transform: rotateY(180deg);
+			}
+			
+			.flip-container,
+			.front,
+			.back {
+				width: 320px;
+				height: 480px;
+			}
+			/* flip speed goes here */
+			
+			.flipper {
+				transition: 0.6s;
+				transform-style: preserve-3d;
+				position: relative;
+			}
+			/* hide back of pane during swap */
+			
+			.front,
+			.back {
+				backface-visibility: hidden;
+				position: absolute;
+				top: 0;
+				left: 0;
+			}
+			/* front pane, placed above back */
+			
+			.front {
+				z-index: 2;
+			}
+			/* back, initially hidden pane */
+			
+			.back {
+				transform: rotateY(180deg);
+			}
+		</style>
+		<div id="page">
 			<div class="section section1">
-				<img src="resources/avatar.jpg" style="width:150px; height: 150px;" class="img-circle" alt="Responsive image">
+				<img src="resources/avatar.jpg" style="width:35%px; height: 35%;" class="img-circle" alt="Responsive image">
 				<p>李欣琪 （Hsinky Lee）</p>
 			</div>
 			<div class="section section2">
 				<p>我的技能/My Skills</p>
-				<div class="progress progress-striped active">
-					11<div class="progress-bar progress-bar-warning" aria-valuemax="100" aria-valuemin="0" aria-valuenow="40" style="width:40%">
-					11</div>
+				<div class="row">
+					<div class="col-md-3">
+						HTML/CSS
+						<br/>(LESS/SASS)
+					</div>
+					<div class="col-md-3">
+						JavaScript
+						<br/>(JQuery,NodeJS,Vue.js/React.js)
+					</div>
+					<div class="col-md-3">
+						APP(HTML5/React Native)
+					</div>
+					<div class="col-md-3">
+						.NET/SharePoint(2010~2016)
+					</div>
+					<div class="col-md-3">
+						55
+					</div>
 				</div>
+
 			</div>
 			<div class="section section3">
 				<h3>第三屏</h3>
